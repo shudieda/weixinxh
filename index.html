@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <!-- 公共样式 -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .wrapper {
+
+    }
+  </style>
+  <!-- 对话框样式 -->
+  <style>
+    .bh {
+      width: 1125px;
+      height: 264px;
+
+      background-color: rgb(17, 17, 17);
+
+    }
+
+    .huakuai {
+
+
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    .box {
+      width: 1125px;
+      padding: 10px;
+      overflow: hidden;
+    }
+    .huakuai::-webkit-scrollbar {
+      display: none
+    }
+
+    .bbx {
+      width: 1125px;
+      overflow: hidden;
+    }
+
+    .box::-webkit-scrollbar {
+
+      display: none
+
+    }
+
+    .sz-ys {
+      margin-right: auto;
+      background-color: rgb(44, 44, 44);
+      margin-left: 13px;
+      background-image: url("tutu/wx-sc/B6.png");
+      background-repeat: no-repeat;
+      padding: 26px 34px 26px 120px;
+      background-position: top 42px left 45px;
+      font-size: 45px;
+      border-radius: 10px;
+      margin-top: 20px;
+      border: none;
+      color: rgb(213, 213, 213);
+    }
+
+    .yz-ys {
+      margin-right: auto;
+      background-color: rgb(44, 44, 44);
+      margin-left: 13px;
+      background-image: url("tutu/wx-sc/B4.png");
+      background-repeat: no-repeat;
+      padding: 26px 34px 26px 120px;
+      background-position: top 45px left 45px;
+      font-size: 45px;
+      border-radius: 10px;
+      margin-top: 20px;
+      border: none;
+      color: rgb(213, 213, 213);
+    }
+
+    .sy-ys {
+      margin-left: auto;
+      background-color: rgb(62, 181, 117);
+      margin-right: 13px;
+      background-image: url("tutu/wx-sc/C2.png");
+      background-repeat: no-repeat;
+      background-position: top 45px right 45px;
+      padding: 26px 120px 26px 34px;
+      margin-top: 20px;
+      font-size: 45px;
+      border-radius: 10px;
+      color: rgb(6, 18, 11);
+
+    }
+
+    .yy-ys {
+      margin-left: auto;
+      background-color: rgb(62, 181, 117);
+      margin-right: 13px;
+      background-image: url("tutu/wx-sc/C1.png");
+      background-repeat: no-repeat;
+      background-position: top 45px right 34px;
+      padding: 26px 120px 26px 34px;
+      margin-top: 20px;
+      font-size: 45px;
+      border-radius: 10px;
+      color: rgb(6, 18, 11);
+    }
+
+    .yzz-ys {
+      background-image: url("tutu/wx-sc/9.png");
+      width: 79px;
+    }
+
+    /* 公共样式 */
+    .left-text-input, .right-text-input {
+      width: fit-content;
+      max-width: 700px;
+      box-sizing: border-box;
+      margin-top: 26px;
+      font-size: 42px;
+      border-radius: 10px;
+    }
+
+    .left-text-input img,
+    .right-text-input img {
+      width: 50px;
+      vertical-align: top;
+    }
+
+    .left-text-input {
+      margin-right: auto;
+      background: rgb(44, 44, 44);
+      margin-left: 13px;
+      padding: 26px 34px 26px 34px;
+      color: rgb(213, 213, 213);
+    }
+
+    .left-zby-input {
+      margin-right: auto;
+      background-color: rgb(44, 44, 44);
+      margin-left: 13px;
+      background-image: url("tutu/wx-sc/B5.png");
+      background-repeat: no-repeat;
+      padding: 28px 34px 28px 90px;
+      background-position: top 35px left 45px;
+      font-size: 40px;
+      border-radius: 10px;
+      margin-top: 24px;
+      color: rgb(213, 213, 213);
+    }
+
+    .left-ysys-input {
+      margin-right: auto;
+      background-color: rgb(44, 44, 44);
+      margin-left: 13px;
+      background-image: url("tutu/wx-sc/B5.png");
+      background-repeat: no-repeat;
+      padding: 28px 34px 28px 90px;
+      background-position: top 35px left 45px;
+      font-size: 40px;
+      border-radius: 10px;
+      margin-top: 24px;
+      border: none;
+      color: rgb(213, 213, 213);
+    }
+
+    .right-text-input {
+      margin-left: auto;
+      background-color: rgb(62, 181, 117);
+      margin-right: 13px;
+      padding: 27px 34px 15px 34px;
+      color: rgb(6, 18, 11);
+
+    }
+
+    .right-sj-input {
+      margin-left: auto;
+      background-color: transparent;
+      margin-right: auto;
+      padding: 25px 20px 20px 20px;
+      font-size: 30px;
+      color: rgb(135, 135, 135);
+    }
+
+
+    .right-qt-input {
+      margin-left: auto;
+      background-color: transparent;
+      margin-right: auto;
+      padding: 25px 20px 20px 20px;
+      font-size: 30px;
+      color: rgb(165, 165, 165);
+    }
+
+    .right-pyp-input {
+      margin-left: auto;
+      background-color: transparent;
+      margin-right: auto;
+      padding: 25px 20px 20px 20px;
+      font-size: 30px;
+      color: rgb(107, 107, 107);
+    }
+
+
+    .right-hlx-input {
+      margin-left: auto;
+      background-color: transparent;
+      margin-right: auto;
+      padding: 25px 20px 20px 55px;
+      text-align: center;
+      background-image: url("tutu/wx-sc/26.png");
+      background-repeat: no-repeat;
+      font-size: 35px;
+      background-position: top 22px left;
+      color: rgb(165, 165, 165);
+    }
+
+    .right-ysy-input {
+      margin-left: auto;
+      background-color: rgb(62, 181, 117);
+      margin-right: 13px;
+      background-image: url("tutu/wx-sc/23.png");
+      background-repeat: no-repeat;
+      background-position: top 35px right 45px;
+      padding: 30px 90px 26px 44px;
+      margin-top: 25px;
+      font-size: 40px;
+      border-radius: 10px;
+      color: rgb(6, 18, 11);
+    }
+
+    .dialog-item {
+      display: flex;
+    }
+
+    .left-head-img, .right-head-img, .right-yz-img {
+      width: 108px;
+      height: 108px;
+      border-radius: 10%;
+
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin-top: 26px;
+
+    }
+
+    .left-head-img {
+      margin-right: 16px;
+      margin-left: 22px;
+    }
+
+    .right-head-img {
+      margin-left: 16px;
+      margin-right: 22px;
+    }
+
+    .right-yz-img {
+      float: right;
+      margin-right: 22px;
+    }
+
+    /* 公共样式 */
+    .left-custom-emoji,
+    .right-custom-emoji {
+      max-width: 800px !important;
+      max-height: 800px !important;
+      margin-top: 30px;
+      border-radius: 10px;
+    }
+
+    .left-custom-emoji {
+      margin-right: auto;
+      margin-left: 11px;
+    }
+
+    .right-custom-emoji {
+      margin-left: auto;
+    }
+
+
+    @font-face {
+      font-family: FZLTZHUNHJW ;
+      src: url("ziti/FZLTZHUNHJW.ttf");
+    }
+
+    @font-face {
+      font-family: 微信体;
+      src: url("ziti/微信体.ttf");
+    }
+  </style>
+  <!-- 测试面板样式 -->
+  <style>
+    .function-box {
+      width: 1000px;
+      height: 2270px;
+      position: relative;
+      padding: 10px;
+      box-sizing: border-box;
+      overflow-y: auto;
+      margin-left: 1300px;
+      margin-top: -2280px;
+      background-color: rgb(218,185,149);
+    }
+
+    .function-item {
+      font-size: 25px;
+      margin: 20px 0;
+      user-select: none;
+    }
+
+    .function-item label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    .emoji-box {
+      user-select: none;
+    }
+
+    label {
+      user-select: none;
+    }
+
+    .sc {
+      opacity: 0;
+    }
+
+    .sc:hover {
+      opacity: 1;
+    }
+
+
+  </style>
+</head>
+<body oncontextmenu=self.event.returnValue=false style="background-color: rgb(218,185,149)">
+<div class="wrapper">
+  <div class="bbx">
+    <div class="bh">
+      <img src="tutu/wx-sc/B3.png" style="margin-top:173px;margin-left: 40px;">
+
+      <div class="dm"
+           style="color:rgb(207,207,207);display:inline-block;text-align: center;font-family:微软雅黑;font-size:48px;border:none;margin-top:-44px;margin-left:30px; width:875px;height: 55px; background-color:transparent;"
+           type="text"
+           name="text"
+           contenteditable
+           value="">张三
+      </div>
+      <img src="tutu/wx-sc/B2.png" style="display: inline-block;position:absolute;margin-top:195px;">
+    </div>
+    <!-- 微信盒子 -->
+    <div id="mydiv" class="huakuai"
+         style="position: relative;display: inline-block;background-color: rgb(17,17,17);height: 1902px;width: 1125px;margin-bottom: -5px;flex-direction: column;">
+    <div class="box">
+
+      <!-- 测试代码 -->
+      <!--<div class="dialog-item">-->
+      <!--    <div class="left-head-img"></div>-->
+      <!--    <div class="left-text-input" contenteditable>点击可以编辑</div>-->
+      <!--</div>-->
+      <!--<div class="dialog-item">-->
+      <!--    <div class="right-text-input" contenteditable>点击可以编辑</div>-->
+      <!--    <div class="right-head-img"></div>-->
+      <!--</div>-->
+    </div>
+    </div>
+    <div style="background-color:rgb(247,247,247);height: 270px;width: 1125px;">
+      <img src="tutu/wx-sc/P2.png">
+    </div>
+  </div>
+  <!-- 侧边 功能区 -->
+  <div class="function-box">
+
+    <!-- 对话框 -->
+    <div class="function-item">
+      <h1 style="margin-left: 380px;margin-bottom: 20px;font-size: 40px;">左边对话设置</h1>
+      <label>
+        添加或修改他人的头像 ( 不要上传透明背景的 )
+        <input style="font-size: 25px;" type="file" class="add-he-head-img" accept="image/*">
+      </label>
+      <button style="margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color:transparent;border-radius:10px;margin-left:20px; font-size: 25px;"
+              type="button" class="add-he-dialog">添加对话框
+      </button>
+      <button class="zby"
+              style="margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color:transparent;border-radius:10px;margin-left:20px; font-size: 25px;"
+              type="button">语音消息-已读
+      </button>
+      <button class="zbw"
+              style="margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color:transparent;border-radius:10px;margin-left:20px; font-size: 25px;"
+              type="button">语音消息-未读
+      </button>
+      <button class="sz"
+              style="margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color:transparent;border-radius:10px;margin-left:20px; font-size: 25px;"
+              type="button">视频通话
+      </button>
+      <button class="yz"
+              style="margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color:transparent;border-radius:10px;margin-left:20px; font-size: 25px;"
+              type="button">语音通话
+      </button>
+      <button class="zbz"
+              style="margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color:transparent;border-radius:10px;margin-left:20px; font-size: 25px;"
+              type="button">微信转账
+      </button>
+      <button class="zhb"
+              style="margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color:transparent;border-radius:10px;margin-left:20px; font-size: 25px;"
+              type="button">微信红包
+      </button>
+      <button class="zhs"
+              style="margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color:transparent;border-radius:10px;margin-left:20px; font-size: 25px;"
+              type="button">微信红包收款
+      </button>
+      <button class="zbs"
+              style="margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color:transparent;border-radius:10px;margin-left:20px; font-size: 25px;"
+              type="button">微信转账收款
+      </button>
+      <button class="zth"
+              style="margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color:transparent;border-radius:10px;margin-left:20px; font-size: 25px;"
+              type="button">微信转账退还
+      </button>
+      <button class="zgq"
+              style="margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color:transparent;border-radius:10px;margin-left:20px; font-size: 25px;"
+              type="button">微信转账过期
+      </button>
+
+      <label>
+        添加他人自定义表情对话框
+        <input style="font-size: 25px;" type="file" class="add-he-expression-dialog" accept="image/*">
+      </label>
+
+      <hr style="margin-top: 30px;margin-bottom: 30px">
+
+      <h1 style="margin-left: 380px;margin-bottom: 20px;font-size: 40px;">右边对话设置</h1>
+      <label>
+        添加或修改自己的头像 ( 不要上传透明背景的 )
+        <input style="font-size: 25px;" type="file" class="add-self-head-img" accept="image/*">
+      </label>
+      <button style="margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color:transparent;border-radius:10px;margin-left:20px; font-size: 25px;"
+              type="button" class="add-self-dialog">添加对话框
+      </button>
+      <button class="sy"
+              style="margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color:transparent;border-radius:10px;margin-left:20px; font-size: 25px;"
+              type="button">视频通话
+      </button>
+      <button class="yy"
+              style="margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color:transparent;border-radius:10px;margin-left:20px; font-size: 25px;"
+              type="button">语音通话
+      </button>
+      <button class="ysy"
+              style="margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color:transparent;border-radius:10px;margin-left:20px; font-size: 25px;"
+              type="button">语音消息
+      </button>
+      <button class="yzz"
+              style="margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color:transparent;border-radius:10px;margin-left:20px; font-size: 25px;"
+              type="button">微信转账
+      </button>
+      <button class="yth"
+              style="margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color:transparent;border-radius:10px;margin-left:20px; font-size: 25px;"
+              type="button">微信转账退还
+      </button>
+      <button class="yzzs"
+              style="margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color:transparent;border-radius:10px;margin-left:20px; font-size: 25px;"
+              type="button">微信转账收款
+      </button>
+      <button class="yhb"
+              style="margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color:transparent;border-radius:10px;margin-left:20px; font-size: 25px;"
+              type="button">微信红包
+      </button>
+      <button class="yhs"
+              style="margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color:transparent;border-radius:10px;margin-left:20px; font-size: 25px;"
+              type="button">微信红包收款
+      </button>
+
+      <label>
+        添加自己自定义表情对话框
+        <input style="font-size: 25px;" type="file" class="add-self-expression-dialog" accept="image/*">
+      </label>
+    </div>
+
+    <hr style="margin-top: 30px;margin-bottom: 30px">
+
+    <h1 style="margin-left: 380px;margin-bottom: 20px;font-size: 40px;">其它对话设置</h1>
+    <button class="hlx"
+            style="margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color:transparent;border-radius:10px;margin-left:20px; font-size: 25px;"
+            type="button">微信红包收款提示
+    </button>
+    <button class="sj"
+            style="margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color:transparent;border-radius:10px;margin-left:20px; font-size: 25px;"
+            type="button">添加时间
+    </button>
+    <button class="qt"
+            style="margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color:transparent;border-radius:10px;margin-left:20px; font-size: 25px;"
+            type="button">添加其他消息
+    </button>
+    <button class="wpt"
+            style="margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color:transparent;border-radius:10px;margin-left:20px; font-size: 25px;"
+            type="button">我拍了拍他
+    </button>
+    <button class="tpw"
+            style="margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color:transparent;border-radius:10px;margin-left:20px; font-size: 25px;"
+            type="button">他拍了拍我
+    </button>
+    <button class="wch"
+            style="margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color:transparent;border-radius:10px;margin-left:20px; font-size: 25px;"
+            type="button">我撤回消息
+    </button>
+    <button class="tch"
+            style="margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color:transparent;border-radius:10px;margin-left:20px; font-size: 25px;"
+            type="button">他撤回消息
+    </button>
+
+
+    <hr style="margin-top: 30px;">
+
+
+    <!-- 在光标处插入表情 -->
+    <div class="function-item">
+      <p>点击表情即可在光标处插入表情</p>
+      <div class="emoji-box"></div>
+    </div>
+
+    <hr>
+
+
+    <!-- 插入重点文字 -->
+    <div class="function-item">
+      <label style="font-size: 25px;margin-left: 300px;">
+        文字 :<input style="font-size: 25px;" type="text" placeholder="点击编辑需要变色文字内容" class="key-words"
+                   style="height: 50px;font-size: 25px;">
+      </label>
+      <label style="font-size: 25px;margin-left: 300px;">
+        颜色 :<input style="font-size: 25px;width: 150px;height: 30px;" type="color" class="key-color"
+                   value="#5B6B92">
+      </label>
+      <div>
+        <label style="font-size: 25px;margin-left: 300px;">
+          有下划线
+          <input style="font-size: 25px;" type="radio" name="drone" class="key-checkbox" value="underline">
+        </label>
+        <label style="font-size: 25px;margin-left: 300px;margin-bottom: 10px;">
+          无下划线
+          <input style="font-size: 25px;" type="radio" name="drone" class="key-checkbox" value="none" checked>
+        </label>
+      </div>
+      <button style="color: white;margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color: #333333;border-radius:10px;margin-left:390px; font-size: 25px;"
+              type="button" class="key-button">在光标处插入文字
+      </button>
+    </div>
+    <hr>
+    <!-- 保存图片 -->
+    <div class="function-item">
+      <button style="color: white;margin-bottom:5px;padding:5px 5px 5px 5px;font-weight:550;background-color: #333333;border-radius:10px;margin-left:420px; font-size: 35px;"
+              class="save-img"> 保存图片
+      </button>
+    </div>
+    <h1 style="color: white; margin-bottom: 20px;">对话内容设置：点击按钮添加对话后，所有内容均可点击对话更改！</h1>
+    <h1 style="color: white; margin-bottom: 20px;">添加表情：点击对话内需要添加表情的位置，选择表情即可添加！</h1>
+    <h1 style="color: white;">添加变色文字：在上方输入框内输入文字内容，选择颜色与是否添加下划线，然后选中需要添加变色的位置，点击在光标处插入文字即可添加！</h1>
+  </div>
+
+</div>
+
+<!-- 引入 emoji -->
+<script src="emoji.js"></script>
+<!-- 引入 html2canvas -->
+<script src="html2canvas.js"></script>
+<!-- 引入自行封装的截图插件 -->
+<script src="screen-shot.js"></script>
+
+<script>
+  var ua = navigator.userAgent;
+  if (ua !== "Mozilla/5.0 (Windows NT 10.0; Win64; x64; ed)") {
+    document.querySelector("body").style = "display: none;"
+  }
+</script>
+
+<script>
+  // 全局变量
+  // 左边头像
+  let leftHead = null
+  // 右边头像
+  let rightHead = null
+  // 控制缩放
+
+
+
+
+  function test(test) {
+    test.parentNode.parentNode.removeChild(test.parentNode);
+  }
+
+  // -------------  添加对话框
+
+  // 获取添加他人对话框
+  let addHeDialog = document.querySelector('.add-he-dialog')
+  // 获取添加自己对话框
+  let addSelfDialog = document.querySelector('.add-self-dialog')
+  //添加左视频通话
+  let addSz = document.querySelector('.sz')
+  // 添加左边语音
+  let addZby = document.querySelector('.zby')
+  // 添加左边语音-未读
+  let addZbw = document.querySelector('.zbw')
+  // 添加最左边转账
+  let addZbz = document.querySelector('.zbz')
+  // 添加左边红包
+  let addZhb = document.querySelector('.zhb')
+  // 添加左边红包收款
+  let addZhs = document.querySelector('.zhs')
+  // 添加最左边转账收款
+  let addZbs = document.querySelector('.zbs')
+  // 添加左边转账退还
+  let addZth = document.querySelector('.zth')
+  // 添加左边转账过期
+  let addZgq = document.querySelector('.zgq')
+  //添加右视频通话
+  let addSy = document.querySelector('.sy')
+  //添加左语音通话
+  let addYz = document.querySelector('.yz')
+  // 获取组件盒子
+  let box = document.querySelector('.box')
+  //添加右语音通话
+  let addYy = document.querySelector('.yy')
+  // 添加右边语音
+  let addYsy = document.querySelector('.ysy')
+  //添加右微信转账
+  let addYzz = document.querySelector('.yzz')
+  // 添加右边转账过期
+  let addYth = document.querySelector('.yth')
+  // 添加右边转账收款
+  let addYzzs = document.querySelector('.yzzs')
+  // 添加右边红包
+  let addYhb = document.querySelector('.yhb')
+  // 添加右边红包收款
+  let addYhs = document.querySelector('.yhs')
+  // 添加红包领取消息
+  let addHlx = document.querySelector('.hlx')
+  // 添加时间
+  let addSj = document.querySelector('.sj')
+  // 添加其他信息
+  let addQt = document.querySelector('.qt')
+
+  // 添加拍一拍
+  let addWp = document.querySelector('.wpt')
+  // 添加拍一拍
+  let addTp = document.querySelector('.tpw')
+
+  // 添加我撤回消息
+  let addWch = document.querySelector('.wch')
+  // 添加他撤回消息
+  let addTch = document.querySelector('.tch')
+
+  // 添加他人对话框
+  addHeDialog.addEventListener('click', () => {
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    itemDiv.className = 'dialog-item'
+    itemDiv.innerHTML = "<img src='tutu/wx-sc/B7.png' style='position: absolute;margin-left: 146px;margin-top: 65px;'>" +
+            "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 50px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-img'
+    // 2.1 判断是否已经上传头像
+    if (leftHead !== null) {
+      headDiv.style.backgroundImage = `url(${leftHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'you-san-j'
+    dialogDiv.className = 'left-text-input'
+    dialogDiv.innerText = '点击编辑'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    box.appendChild(itemDiv)
+  })
+
+  // 添加左边语音消息
+  addZby.addEventListener('click', () => {
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    itemDiv.className = 'dialog-item'
+    itemDiv.innerHTML = "<img src='tutu/wx-sc/B7.png' style='position: absolute;margin-left: 146px;margin-top: 65px;'>" +
+            "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 50px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-img'
+    // 2.1 判断是否已经上传头像
+    if (leftHead !== null) {
+      headDiv.style.backgroundImage = `url(${leftHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'you-san-j'
+    dialogDiv.className = 'left-zby-input'
+    dialogDiv.innerText = '5"'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    box.appendChild(itemDiv)
+  })
+
+  // 添加左边语音消息-未读
+  addZbw.addEventListener('click', () => {
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    itemDiv.className = 'dialog-item'
+    itemDiv.innerHTML = "<img  class='zuo' src=tutu/wx-sc/B7.png style='position:absolute;margin-left: 146px;margin-top: 65px;'>" +
+            "<input class='sc' style='margin-top:30px;font-size:40px;position:absolute;width:95px;height: 95px;margin-left: 40px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-img'
+    // 2.1 判断是否已经上传头像
+    if (leftHead !== null) {
+      headDiv.style.backgroundImage = `url(${leftHead})`
+    }
+    // 3. 创建对话框div
+    let zyDiv = document.createElement('div')
+    zyDiv.innerHTML = "<div contenteditable style='display: inline-block;' class='left-ysys-input' value='5“' type=\"text\" onkeydown=\"this.onkeyup();\" onkeyup=\"this.size=(this.value.length>1?this.value.length:1);\" size=\"1\">5”</div>" +
+            "<img src=tutu/wx-sc/25.png style='margin-top: 48px;margin-left: 30px;'>"
+    //
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(zyDiv)
+    // 5. 把单条数据添加到盒子中
+    box.appendChild(itemDiv)
+
+
+  })
+
+  // 添加左边转账
+  addZbz.addEventListener('click', () => {
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    itemDiv.className = 'dialog-item'
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 50px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-img'
+    // 2.1 判断是否已经上传头像
+    if (leftHead !== null) {
+      headDiv.style.backgroundImage = `url(${leftHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/8.png' style='margin-top:25px;position: relative;margin-left: px;'>" +
+            "<div contenteditable style='display:inline-block;width:40px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-470px;font-size: 40px;margin-top: 51px;'value=''>￥</div>" +
+            "<div contenteditable style='display:inline-block;width:400px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-435px;font-size: 40px;margin-top: 57px;font-family: 微信体;'value=''>1000.00</div>" +
+            "<div contenteditable style='display:inline-block;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-460px;font-size: 35px;margin-top: 97px;'value=''>你发起了一笔转账</div>" +
+            "<div contenteditable style='display:inline-block;color:rgb(255,227,198);background-color:transparent;border:none;position: absolute;margin-left: -590px;font-size: 30px;margin-top: 190px;'value=''>微信转账</div></div>"
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    box.appendChild(itemDiv)
+  })
+  //添加左边转账收款
+  addZbs.addEventListener('click', () => {
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    itemDiv.className = 'dialog-item'
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 50px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-img'
+    // 2.1 判断是否已经上传头像
+    if (leftHead !== null) {
+      headDiv.style.backgroundImage = `url(${leftHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/17.png' style='margin-top:25px;position: relative;margin-left: px;width: 637px;'>" +
+            "<div contenteditable style='display:inline-block;width:40px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-470px;font-size: 40px;margin-top: 51px;'value=''>￥</div>" +
+            "<div contenteditable style='display:inline-block;width:400px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-435px;font-size: 40px;margin-top: 56px;font-family: 微信体;'value=''>1000.00</div>" +
+            "<div contenteditable style='display:inline-block;color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left:-460px;font-size: 35px;margin-top: 97px;'value=''>已收款</div>" +
+            "<div contenteditable style='display:inline-block;color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left: -590px;font-size: 30px;margin-top: 190px;'value=''>微信转账</div></div>"
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    box.appendChild(itemDiv)
+  })
+
+  // 添加左边转账退回
+  addZth.addEventListener('click', () => {
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    itemDiv.className = 'dialog-item'
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 50px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-img'
+    // 2.1 判断是否已经上传头像
+    if (leftHead !== null) {
+      headDiv.style.backgroundImage = `url(${leftHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/12.png' style='margin-top:25px;position: relative;margin-left: px;width: 637px;'>" +
+            "<div contenteditable style='display:inline-block;width:40px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-470px;font-size: 40px;margin-top: 51px;'value=''>￥</div>" +
+            "<div contenteditable style='display:inline-block;width:400px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-435px;font-size: 40px;margin-top: 57px;font-family: 微信体;'value=''>1000.00</div>" +
+            "<div contenteditable style='display:inline-block;color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left:-460px;font-size: 35px;margin-top: 95px;'value=''>已被退还</div>" +
+            "<div contenteditable style='display:inline-block;color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left: -590px;font-size: 30px;margin-top: 190px;'value=''>微信转账</div></div>"
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    box.appendChild(itemDiv)
+  })
+
+  // 添加左边转账过期
+  addZgq.addEventListener('click', () => {
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    itemDiv.className = 'dialog-item'
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 50px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-img'
+    // 2.1 判断是否已经上传头像
+    if (leftHead !== null) {
+      headDiv.style.backgroundImage = `url(${leftHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/13.png' style='margin-top:25px;position: relative;margin-left: px;width: 637px;'>" +
+            "<div contenteditable style='display:inline-block;width:40px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-470px;font-size: 40px;margin-top: 51px;'value=''>￥</div>" +
+            "<div contenteditable style='display:inline-block;width:400px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-435px;font-size: 40px;margin-top: 57px;font-family: 微信体;'value=''>1000.00</div>" +
+            "<div contenteditable style='display:inline-block;color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left:-460px;font-size: 35px;margin-top: 97px;'value=''>已过期</div>" +
+            "<div contenteditable style='display:inline-block;color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left: -590px;font-size: 30px;margin-top: 190px;'value=''>微信转账</div></div>"
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    box.appendChild(itemDiv)
+  })
+
+  // 添加左边红包
+  addZhb.addEventListener('click', () => {
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    itemDiv.className = 'dialog-item'
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 50px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-img'
+    // 2.1 判断是否已经上传头像
+    if (leftHead !== null) {
+      headDiv.style.backgroundImage = `url(${leftHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/6.png' style='margin-top:25px;position: relative;margin-left: px;width: 637px;'>" +
+            "<div contenteditable style='display: inline-block; width:400px;color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left:-440px;font-size: 40px;margin-top: 90px;'value=''>恭喜发财，大吉大利</div>" +
+            "<div contenteditable style='display: inline-block; color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left: -590px;font-size: 30px;margin-top: 210px;'value=''>微信红包</div></div>"
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    box.appendChild(itemDiv)
+  })
+
+  // 添加左边红包收款
+  addZhs.addEventListener('click', () => {
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    itemDiv.className = 'dialog-item'
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 50px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-img'
+    // 2.1 判断是否已经上传头像
+    if (leftHead !== null) {
+      headDiv.style.backgroundImage = `url(${leftHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/16.png' style='margin-top:25px;position: relative;margin-left: px;width: 637px;'>" +
+            "<div contenteditable style='display: inline-block; width:400px;color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left:-440px;font-size: 40px;margin-top: 63px;'value=''>恭喜发财，大吉大利</div>" +
+            "<div contenteditable style='display:inline-block; color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left:-440px;font-size: 35px;margin-top: 115px;'value=''>已领取</div>" +
+            "<div contenteditable style='display: inline-block; color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left: -590px;font-size: 30px;margin-top: 210px;'value=''>微信红包</div></div>"
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    box.appendChild(itemDiv)
+  })
+
+  // 添加自己对话框
+  addSelfDialog.addEventListener('click', () => {
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    itemDiv.className = 'dialog-item'
+    itemDiv.innerHTML = "<img src='tutu/wx-sc/C3.png' style='position: absolute;margin-left: 966px;margin-top: 65px;'>" +
+            "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 930px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'right-head-img'
+    // 2.1 判断是否已经上传头像
+    if (rightHead !== null) {
+      headDiv.style.backgroundImage = `url(${rightHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'right-text-input'
+    dialogDiv.innerText = '点击编辑'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+    itemDiv.appendChild(dialogDiv)
+    itemDiv.appendChild(headDiv)
+    // 5. 把单条数据添加到盒子中
+    box.appendChild(itemDiv)
+  })
+  // 右边语音消息
+  addYsy.addEventListener('click', () => {
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    itemDiv.className = 'dialog-item'
+    itemDiv.innerHTML = "<img src='tutu/wx-sc/C3.png' style='position: absolute;margin-left: 966px;margin-top: 65px;'>" +
+            "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 930px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'right-head-img'
+    // 2.1 判断是否已经上传头像
+    if (rightHead !== null) {
+      headDiv.style.backgroundImage = `url(${rightHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'right-ysy-input'
+    dialogDiv.innerText = '5"'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+    itemDiv.appendChild(dialogDiv)
+    itemDiv.appendChild(headDiv)
+    // 5. 把单条数据添加到盒子中
+    box.appendChild(itemDiv)
+  })
+
+  //添加对方视频通话
+  addSz.addEventListener('click', () => {
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    itemDiv.className = 'dialog-item'
+    itemDiv.innerHTML = "<img src='tutu/wx-sc/B7.png' style='position: absolute;margin-left: 146px;margin-top: 65px;'>" +
+            "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 50px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-img'
+    // 2.1 判断是否已经上传头像
+    if (leftHead !== null) {
+      headDiv.style.backgroundImage = `url(${leftHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'you-san-j'
+    dialogDiv.className = 'sz-ys'
+    dialogDiv.innerText = '聊天时长03:00'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    box.appendChild(itemDiv)
+  })
+
+  //添加对方语音通话
+  addYz.addEventListener('click', () => {
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    itemDiv.className = 'dialog-item'
+    itemDiv.innerHTML = "<img src='tutu/wx-sc/B7.png' style='position: absolute;margin-left: 146px;margin-top: 65px;'>" +
+            "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 50px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'left-head-img'
+    // 2.1 判断是否已经上传头像
+    if (leftHead !== null) {
+      headDiv.style.backgroundImage = `url(${leftHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'yz-ys'
+    dialogDiv.innerText = '聊天时长03:05'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    box.appendChild(itemDiv)
+  })
+  //添加我方视频通话
+  addSy.addEventListener('click', () => {
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    itemDiv.className = 'dialog-item'
+    itemDiv.innerHTML = "<img src='tutu/wx-sc/C3.png' style='position: absolute;margin-left: 966px;margin-top: 65px;'>" +
+            "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 930px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'right-head-img'
+    // 2.1 判断是否已经上传头像
+    if (rightHead !== null) {
+      headDiv.style.backgroundImage = `url(${rightHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'sy-ys'
+    dialogDiv.innerText = '聊天时长03:55'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+    itemDiv.appendChild(dialogDiv)
+    itemDiv.appendChild(headDiv)
+    // 5. 把单条数据添加到盒子中
+    box.appendChild(itemDiv)
+  })
+  //添加我方语音通话
+  addYy.addEventListener('click', () => {
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    itemDiv.className = 'dialog-item'
+    itemDiv.innerHTML = "<img src='tutu/wx-sc/C3.png' style='position: absolute;margin-left: 966px;margin-top: 65px;'>" +
+            "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 930px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'right-head-img'
+    // 2.1 判断是否已经上传头像
+    if (rightHead !== null) {
+      headDiv.style.backgroundImage = `url(${rightHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'yy-ys'
+    dialogDiv.innerText = '聊天时长05:57'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+    itemDiv.appendChild(dialogDiv)
+    itemDiv.appendChild(headDiv)
+    // 5. 把单条数据添加到盒子中
+    box.appendChild(itemDiv)
+  })
+  //添加我方微信转账
+  addYzz.addEventListener('click', () => {
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    itemDiv.className = ''
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 930px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'right-yz-img'
+    // 2.1 判断是否已经上传头像
+    if (rightHead !== null) {
+      headDiv.style.backgroundImage = `url(${rightHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/9.png' style='margin-top:25px;position: relative;margin-left: 343px;width: 637px;'>" +
+            "<div contenteditable style='display:inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-490px;font-size: 40px;margin-top: 51px;'value=''>￥</div>" +
+            "<div contenteditable style='display: inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-455px;font-size: 40px;margin-top: 57px;font-family: 微信体;'value=''>1000.00</div>" +
+            "<div contenteditable style='display: inline-block;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-480px;font-size: 35px;margin-top: 100px;'value=''>你发起了一笔转账</div>" +
+            "<div contenteditable style='display: inline-block;color:rgb(255,227,198);background-color:transparent;border:none;position: absolute;margin-left: -600px;font-size: 30px;margin-top: 185px;'value=''>微信转账</div></div>"
+    // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    box.appendChild(itemDiv)
+  })
+
+  // 我方转账退回
+  addYth.addEventListener('click', () => {
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    itemDiv.className = ''
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 930px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'right-yz-img'
+    // 2.1 判断是否已经上传头像
+    if (rightHead !== null) {
+      headDiv.style.backgroundImage = `url(${rightHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/19.png' style='margin-top:25px;position: relative;margin-left: 343px;'>" +
+            "<div contenteditable style='display:inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-490px;font-size: 40px;margin-top: 51px;'value=''>￥</div>" +
+            "<div contenteditable style='display: inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-455px;font-size: 40px;margin-top: 57px;font-family: 微信体;'value=''>1000.00</div>" +
+            "<div contenteditable style='display: inline-block;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-485px;font-size: 40px;margin-top: 95px;'value='已退还'>已退还</div>" +
+            "<div contenteditable style='display: inline-block;color:rgb(255,249,243);background-color:transparent;border:none;position: absolute;margin-left: -600px;font-size: 30px;margin-top: 185px;'value='微信转账'>微信转账</div></div>"
+    // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    box.appendChild(itemDiv)
+  })
+
+  //添加我方转账收款
+  addYzzs.addEventListener('click', () => {
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    itemDiv.className = ''
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 930px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'right-yz-img'
+    // 2.1 判断是否已经上传头像
+    if (rightHead !== null) {
+      headDiv.style.backgroundImage = `url(${rightHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/18.png' style='margin-top:25px;position: relative;margin-left: 343px;width: 637px;'>" +
+            "<div contenteditable style='display:inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-490px;font-size: 40px;margin-top: 51px;'value=''>￥</div>" +
+            "<div contenteditable style='display: inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-455px;font-size: 40px;margin-top: 57px;font-family: 微信体;'value=''>1000.00</div>" +
+            "<div contenteditable style='display: inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-480px;font-size: 35px;margin-top: 100px;'value=''>已收款</div>" +
+            "<div contenteditable style='display: inline-block; color:rgb(255,249,249);background-color:transparent;border:none;position: absolute;margin-left: -600px;font-size: 30px;margin-top: 185px;'value=''>微信转账</div></div>"
+    // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    box.appendChild(itemDiv)
+  })
+  //添加我方微信红包
+  addYhb.addEventListener('click', () => {
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    itemDiv.className = ''
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 930px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'right-yz-img'
+    // 2.1 判断是否已经上传头像
+    if (rightHead !== null) {
+      headDiv.style.backgroundImage = `url(${rightHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/14.png' style='margin-top:25px;position: relative;margin-left: 343px;width: 637px;'>" +
+            "<div contenteditable style='display: inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-450px;font-size: 40px;margin-top: 85px;'value=''>恭喜发财，大吉大利</div>" +
+            "<div contenteditable style='display: inline-block; color:rgb(255,227,198);background-color:transparent;border:none;position: absolute;margin-left: -600px;font-size: 30px;margin-top: 215px;'value=''>微信红包</div></div>"
+    // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    box.appendChild(itemDiv)
+  })
+
+  // 添加右边红包收款
+  addYhs.addEventListener('click', () => {
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    itemDiv.className = ''
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 945px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'right-yz-img'
+    // 2.1 判断是否已经上传头像
+    if (rightHead !== null) {
+      headDiv.style.backgroundImage = `url(${rightHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/15.png' style='margin-top:25px;position: relative;margin-left: 343px;width: 637px;'>" +
+            "<div contenteditable style='display: inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-450px;font-size: 40px;margin-top: 65px;'value=''>恭喜发财，大吉大利</div>" +
+            "<div contenteditable style=' display: inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-450px;font-size: 35px;margin-top: 115px;'value=''>已领取</div>" +
+            "<div contenteditable style='display: inline-block; color:rgb(255,251,255);background-color:transparent;border:none;position: absolute;margin-left: -600px;font-size: 30px;margin-top: 205px;'value=''>微信红包</div></div>"
+    // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+
+    itemDiv.appendChild(headDiv)
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    box.appendChild(itemDiv)
+  })
+
+  // 添加红包领取消息
+  addHlx.addEventListener('click', () => {
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    itemDiv.className = 'dialog-item'
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:10px;margin-left: 730px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'right-head-img'
+    // 2.1 判断是否已经上传头像
+    if (rightHead !== null) {
+      headDiv.style.backgroundImage = `url(${rightHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'right-hlx-input'
+    dialogDiv.innerText = 'xxx领取了你的红包'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+    itemDiv.appendChild(dialogDiv)
+
+    // 5. 把单条数据添加到盒子中
+    box.appendChild(itemDiv)
+  })
+
+  // 添加时间
+  addSj.addEventListener('click', () => {
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    itemDiv.className = 'dialog-item'
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-left: 580px;' type='button' onclick='test(this)' value='删除'/>"
+    // 2. 创建头像
+    let headDiv = document.createElement('div')
+    headDiv.className = 'right-head-img'
+    // 2.1 判断是否已经上传头像
+    if (rightHead !== null) {
+      headDiv.style.backgroundImage = `url(${rightHead})`
+    }
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'right-sj-input'
+    dialogDiv.innerText = '13:00'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+    itemDiv.appendChild(dialogDiv)
+
+    // 5. 把单条数据添加到盒子中
+    box.appendChild(itemDiv)
+  })
+
+  // 添加其他消息
+  addQt.addEventListener('click', () => {
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    itemDiv.className = 'dialog-item'
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-left: 620px;' type='button' onclick='test(this)' value='删除'/>"
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'right-qt-input'
+    dialogDiv.innerText = '点击编辑'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    box.appendChild(itemDiv)
+
+  })
+
+
+  // 拍一拍
+  addWp.addEventListener('click', () => {
+// 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    itemDiv.className = 'dialog-item'
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-left: 700px;' type='button' onclick='test(this)' value='删除'/>"
+// 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'right-qt-input'
+    dialogDiv.innerText = '我拍了拍“张三”'
+    dialogDiv.setAttribute('contenteditable', true)
+// 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+    itemDiv.appendChild(dialogDiv)
+// 5. 把单条数据添加到盒子中
+    box.appendChild(itemDiv)
+  })
+  // 拍一拍
+  addTp.addEventListener('click', () => {
+// 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    itemDiv.className = 'dialog-item'
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-left: 700px;' type='button' onclick='test(this)' value='删除'/>"
+// 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'right-pyp-input'
+    dialogDiv.innerText = '“张三”拍了拍我'
+    dialogDiv.setAttribute('contenteditable', true)
+// 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+    itemDiv.appendChild(dialogDiv)
+// 5. 把单条数据添加到盒子中
+    box.appendChild(itemDiv)
+  })
+
+
+  // 我撤回
+  addWch.addEventListener('click', () => {
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    itemDiv.className = 'dialog-item'
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-left:700px;' type='button' onclick='test(this)' value='删除'/>"
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'right-qt-input'
+    dialogDiv.innerText = '你撤回了一条消息'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    box.appendChild(itemDiv)
+
+  })
+
+  // 他撤回
+  addTch.addEventListener('click', () => {
+    // 1. 创建一条数据
+    let itemDiv = document.createElement('div')
+    itemDiv.className = 'dialog-item'
+    itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-left: 700px;' type='button' onclick='test(this)' value='删除'/>"
+    // 3. 创建对话框div
+    let dialogDiv = document.createElement('div')
+    dialogDiv.className = 'right-qt-input'
+    dialogDiv.innerText = '“张三”撤回了一条消息'
+    dialogDiv.setAttribute('contenteditable', true)
+    // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
+    itemDiv.appendChild(dialogDiv)
+    // 5. 把单条数据添加到盒子中
+    box.appendChild(itemDiv)
+
+  })
+
+
+  // -------------  添加头像
+
+  // 获取添加他人头像
+  let addHeHeadImg = document.querySelector('.add-he-head-img')
+  // 获取添加自己头像
+  let addSelfHeadImg = document.querySelector('.add-self-head-img')
+  // 添加他人头像
+  addHeHeadImg.addEventListener('change', function () {
+    let blob = this.files[0]
+    //创建文件读取对象
+    let reader = new FileReader();
+    reader.readAsDataURL(blob);
+    //监听文件读取结束后事件
+    reader.onloadend = function (e) {
+      let headImg = document.querySelectorAll('.left-head-img')
+      headImg.forEach(item => {
+        item.style.backgroundImage = `url(${e.target.result})`
+      })
+      // 暴露变量给全局
+      leftHead = e.target.result
+    };
+  })
+  //添加自己头像
+  addSelfHeadImg.addEventListener('change', function () {
+    let blob = this.files[0]
+    //创建文件读取对象
+    let reader = new FileReader();
+    reader.readAsDataURL(blob);
+    //监听文件读取结束后事件
+    reader.onloadend = function (e) {
+      let headImg = document.querySelectorAll('.right-head-img,.right-yz-img')
+      headImg.forEach(item => {
+        item.style.backgroundImage = `url(${e.target.result})`
+      })
+      // 暴露变量给全局
+      rightHead = e.target.result
+    };
+  })
+
+
+  // -------------  自定义表情对话框
+  // 获取添加他人表情的上传框
+  let addHeExpressionDialog = document.querySelector('.add-he-expression-dialog')
+  // 获取添加自己表情的上传框
+  let addSelfExpressionDialog = document.querySelector('.add-self-expression-dialog')
+  // 添加他人表情
+  addHeExpressionDialog.addEventListener('change', function () {
+    let blob = this.files[0]
+    //创建文件读取对象
+    let reader = new FileReader();
+    reader.readAsDataURL(blob);
+    //监听文件读取结束后事件
+    reader.onloadend = function (e) {
+      // 1. 创建一条数据
+      let itemDiv = document.createElement('div')
+      itemDiv.className = 'dialog-item'
+      itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 35px;' type='button' onclick='test(this)' value='删除'/>"
+      // 2. 创建头像
+      let headDiv = document.createElement('div')
+      headDiv.className = 'left-head-img'
+      // 2.1 判断是否已经上传头像
+      if (leftHead !== null) {
+        headDiv.style.backgroundImage = `url(${leftHead})`
+      }
+      // 3. 创建存放自定义表情的 img
+      let dialogImg = document.createElement('img')
+      dialogImg.src = e.target.result
+      dialogImg.className = 'left-custom-emoji'
+      // 5. 把头像和对话框添加到单条数据中
+      itemDiv.appendChild(headDiv)
+      itemDiv.appendChild(dialogImg)
+      // 6. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+      // 7. 清空添加表情的 input 框中的文件
+      addSelfExpressionDialog.value = ''
+    };
+  })
+  // 添加自己表情
+  addSelfExpressionDialog.addEventListener('change', function () {
+    let blob = this.files[0]
+    //创建文件读取对象
+    let reader = new FileReader();
+    reader.readAsDataURL(blob);
+    //监听文件读取结束后事件
+    reader.onloadend = function (e) {
+      // 1. 创建一条数据
+      let itemDiv = document.createElement('div')
+      itemDiv.className = 'dialog-item'
+      itemDiv.innerHTML = "<input class='sc' style='font-size:40px;height:80px;width:80px;position:absolute;margin-top:40px;margin-left: 945px;' type='button' onclick='test(this)' value='删除'/>"
+      // 2. 创建头像
+      let headDiv = document.createElement('div')
+      headDiv.className = 'right-head-img'
+      // 2.1 判断是否已经上传头像
+      if (leftHead !== null) {
+        headDiv.style.backgroundImage = `url(${leftHead})`
+      }
+      // 3. 创建存放自定义表情的 img
+      let dialogImg = document.createElement('img')
+      dialogImg.src = e.target.result
+      dialogImg.className = 'right-custom-emoji'
+      // 5. 把头像和对话框添加到单条数据中
+      itemDiv.appendChild(dialogImg)
+      itemDiv.appendChild(headDiv)
+      // 6. 把单条数据添加到盒子中
+      box.appendChild(itemDiv)
+      // 7. 清空添加表情的 input 框中的文件
+      addSelfExpressionDialog.value = ''
+    };
+  })
+
+  // -------------  添加文字表情
+
+  // 获取存放 emoji 的容器
+  let emojiBox = document.querySelector('.emoji-box')
+  // 循环表情并且渲染到界面上
+  emoji.forEach(item => {
+    let oImg = document.createElement('img')
+    oImg.src = item.src
+    oImg.alt = item.alt
+    oImg.style.width = "30px"
+    oImg.style.height = "30px"
+    oImg.style.margin = '5px'
+    oImg.style.userSelect = 'none'
+    emojiBox.appendChild(oImg)
+    // 添加插入表情的点击事件
+    oImg.addEventListener('click', function () {
+      insertImg(item.src)
+    })
+  })
+
+
+  /**
+   * 在光标处插入图片
+   * @param src 路径
+   */
+  function insertImg(src) {
+    if (window.getSelection) {
+      let sel = window.getSelection();
+      let range = sel.getRangeAt(0);
+      let img = new Image();
+      range.deleteContents()
+      img.src = src;
+      range.insertNode(img);
+      range.collapse(false); //对于IE来说，参数不可省略
+    }
+  }
+
+  // -------------  保存图片
+
+  // 获取保存按钮
+  let saveImg = document.querySelector('.save-img')
+
+  // 点击保存按钮
+  saveImg.addEventListener('click', () => {
+    saveImgFn('微信图片')
+  })
+
+  // 自动保存图片 10 秒一次
+  setInterval(() => {
+    saveImgFn('自动保存')
+  }, 1000000000)
+
+  // 保存图片的方法
+  async function saveImgFn(downloadName) {
+    // 获取需要转换的dom
+    // html2canvas(document.querySelector('.bbx'))
+    //     .then(canvas => {
+    //         let imgUrl = canvas.toDataURL('image/jpg')
+    //         let image = document.createElement('img')
+    //         image.src = imgUrl
+    //         let a = document.createElement('a')
+    //         a.href = imgUrl
+    //         a.download = name // 自定义名称
+    //         a.click()
+    //     })
+
+    // 截图模块
+    let canvasBox = document.querySelector('.bbx')
+    // 使用自定义方法进行转换
+    await getHtmlImage({canvasBox,downloadName})
+
+  }
+
+  // -------------  在所选位置插入重点文字
+
+
+  // 获取 按钮
+  let keyBtn = document.querySelector('.key-button')
+
+  // 点击插入重点文字
+  keyBtn.addEventListener('click', () => {
+    // 获取 文字
+    let keyWords = document.querySelector('.key-words')
+    // 获取 颜色
+    let keyColor = document.querySelector('.key-color')
+    // 获取 下划线
+    let keyCheckbox = document.querySelector('.key-checkbox:checked')
+
+    // 插入文字
+    insertSpan({
+      text: keyWords.value,
+      color: keyColor.value,
+      underline: keyCheckbox.value
+    })
+  })
+
+  /**
+   * 在光标处插入元素
+   * @param text 文字内容
+   * @param color 文字颜色
+   * @param underline 是否带有下划线
+   */
+  function insertSpan({text, color, underline}) {
+    if (window.getSelection) {
+      let sel = window.getSelection();
+      let range = sel.getRangeAt(0);
+      // 创建元素
+      let oSpan = document.createElement('span')
+      range.deleteContents()
+      oSpan.innerText = text
+      oSpan.style.color = color
+      oSpan.style.textDecoration = underline
+      // 整块选中/删除
+      oSpan.setAttribute('contenteditable', false)
+      range.insertNode(oSpan);
+      range.collapse(false); //对于IE来说，参数不可省略
+    }
+  }
+
+</script>
+
+</body>
+</html>
