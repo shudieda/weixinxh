@@ -19,14 +19,21 @@
     .bh {
       width: 1125px;
       height: 264px;
-
       background-color: rgb(17, 17, 17);
-
+    }
+    
+    @font-face {
+      font-family: 字体子系 ;
+      src: url("ziti/字体子系.ttf");
     }
 
+
+    @font-face {
+      font-family: Andale Sans UI ;
+      src: url("ziti/Andale Sans UI.ttf");
+    }
+    
     .huakuai {
-
-
       overflow-y: auto;
       overflow-x: hidden;
     }
@@ -63,6 +70,7 @@
       margin-top: 20px;
       border: none;
       color: rgb(213, 213, 213);
+      font-family: 字体子系;
     }
 
     .yz-ys {
@@ -78,6 +86,7 @@
       margin-top: 20px;
       border: none;
       color: rgb(213, 213, 213);
+      font-family: 字体子系;
     }
 
     .sy-ys {
@@ -92,7 +101,7 @@
       font-size: 45px;
       border-radius: 10px;
       color: rgb(6, 18, 11);
-
+      font-family: 字体子系;
     }
 
     .yy-ys {
@@ -107,6 +116,7 @@
       font-size: 45px;
       border-radius: 10px;
       color: rgb(6, 18, 11);
+      font-family: 字体子系;
     }
 
     .yzz-ys {
@@ -122,6 +132,7 @@
       margin-top: 26px;
       font-size: 42px;
       border-radius: 10px;
+      font-family: 字体子系;
     }
 
     .left-text-input img,
@@ -150,6 +161,7 @@
       border-radius: 10px;
       margin-top: 24px;
       color: rgb(213, 213, 213);
+      font-family: 字体子系;
     }
 
     .left-ysys-input {
@@ -165,6 +177,7 @@
       margin-top: 24px;
       border: none;
       color: rgb(213, 213, 213);
+      font-family: 字体子系;
     }
 
     .right-text-input {
@@ -183,6 +196,7 @@
       padding: 25px 20px 20px 20px;
       font-size: 30px;
       color: rgb(135, 135, 135);
+      font-family: 字体子系;
     }
 
 
@@ -193,6 +207,7 @@
       padding: 25px 20px 20px 20px;
       font-size: 30px;
       color: rgb(165, 165, 165);
+      font-family: 字体子系;
     }
 
     .right-pyp-input {
@@ -202,6 +217,7 @@
       padding: 25px 20px 20px 20px;
       font-size: 30px;
       color: rgb(107, 107, 107);
+      font-family: 字体子系;
     }
 
 
@@ -230,6 +246,7 @@
       font-size: 40px;
       border-radius: 10px;
       color: rgb(6, 18, 11);
+      font-family: 字体子系;
     }
 
     .dialog-item {
@@ -287,8 +304,8 @@
     }
 
     @font-face {
-      font-family: 微信体;
-      src: url("ziti/微信体.ttf");
+      font-family: WeChat Sans SS Medium;
+      src: url("ziti/WeChat Sans SS Medium.ttf");
     }
   </style>
   <!-- 测试面板样式 -->
@@ -848,7 +865,7 @@
     }
     // 3. 创建对话框div
     let zyDiv = document.createElement('div')
-    zyDiv.innerHTML = "<div contenteditable style='display: inline-block;' class='left-ysys-input' value='5“' type=\"text\" onkeydown=\"this.onkeyup();\" onkeyup=\"this.size=(this.value.length>1?this.value.length:1);\" size=\"1\">5”</div>" +
+    zyDiv.innerHTML = "<div contenteditable style='font-family: 字体子系;display: inline-block;' class='left-ysys-input' value='5“' type=\"text\" onkeydown=\"this.onkeyup();\" onkeyup=\"this.size=(this.value.length>1?this.value.length:1);\" size=\"1\">5”</div>" +
             "<img src=tutu/wx-sc/25.png style='margin-top: 48px;margin-left: 30px;'>"
     //
     // 4. 把头像和对话框添加到单条数据中
@@ -876,8 +893,8 @@
     // 3. 创建对话框div
     let dialogDiv = document.createElement('div')
     dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/8.png' style='margin-top:25px;position: relative;margin-left: px;'>" +
-            "<div contenteditable style='display:inline-block;width:40px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-470px;font-size: 40px;margin-top: 51px;'value=''>￥</div>" +
-            "<div contenteditable style='display:inline-block;width:400px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-435px;font-size: 40px;margin-top: 57px;font-family: 微信体;'value=''>1000.00</div>" +
+            "<div contenteditable style='font-family: Andale Sans UI; font-weight: 600;display:inline-block;width:40px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-470px;font-size: 40px;margin-top: 51px;'value=''>￥</div>" +
+            "<div contenteditable style='display:inline-block;width:400px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-435px;font-size: 40px;margin-top: 57px;font-family: WeChat Sans SS Medium;'value=''>1000.00</div>" +
             "<div contenteditable style='display:inline-block;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-460px;font-size: 35px;margin-top: 97px;'value=''>你发起了一笔转账</div>" +
             "<div contenteditable style='display:inline-block;color:rgb(255,227,198);background-color:transparent;border:none;position: absolute;margin-left: -590px;font-size: 30px;margin-top: 190px;'value=''>微信转账</div></div>"
     // 4. 把头像和对话框添加到单条数据中
@@ -902,8 +919,8 @@
     // 3. 创建对话框div
     let dialogDiv = document.createElement('div')
     dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/17.png' style='margin-top:25px;position: relative;margin-left: px;width: 637px;'>" +
-            "<div contenteditable style='display:inline-block;width:40px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-470px;font-size: 40px;margin-top: 51px;'value=''>￥</div>" +
-            "<div contenteditable style='display:inline-block;width:400px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-435px;font-size: 40px;margin-top: 56px;font-family: 微信体;'value=''>1000.00</div>" +
+            "<div contenteditable style='font-family: Andale Sans UI; font-weight: 600;display:inline-block;width:40px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-470px;font-size: 40px;margin-top: 51px;'value=''>￥</div>" +
+            "<div contenteditable style='display:inline-block;width:400px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-435px;font-size: 40px;margin-top: 56px;font-family: WeChat Sans SS Medium;'value=''>1000.00</div>" +
             "<div contenteditable style='display:inline-block;color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left:-460px;font-size: 35px;margin-top: 97px;'value=''>已收款</div>" +
             "<div contenteditable style='display:inline-block;color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left: -590px;font-size: 30px;margin-top: 190px;'value=''>微信转账</div></div>"
     // 4. 把头像和对话框添加到单条数据中
@@ -929,8 +946,8 @@
     // 3. 创建对话框div
     let dialogDiv = document.createElement('div')
     dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/12.png' style='margin-top:25px;position: relative;margin-left: px;width: 637px;'>" +
-            "<div contenteditable style='display:inline-block;width:40px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-470px;font-size: 40px;margin-top: 51px;'value=''>￥</div>" +
-            "<div contenteditable style='display:inline-block;width:400px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-435px;font-size: 40px;margin-top: 57px;font-family: 微信体;'value=''>1000.00</div>" +
+            "<div contenteditable style='font-family: Andale Sans UI; font-weight: 600;display:inline-block;width:40px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-470px;font-size: 40px;margin-top: 51px;'value=''>￥</div>" +
+            "<div contenteditable style='display:inline-block;width:400px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-435px;font-size: 40px;margin-top: 57px;font-family: WeChat Sans SS Medium;'value=''>1000.00</div>" +
             "<div contenteditable style='display:inline-block;color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left:-460px;font-size: 35px;margin-top: 95px;'value=''>已被退还</div>" +
             "<div contenteditable style='display:inline-block;color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left: -590px;font-size: 30px;margin-top: 190px;'value=''>微信转账</div></div>"
     // 4. 把头像和对话框添加到单条数据中
@@ -956,8 +973,8 @@
     // 3. 创建对话框div
     let dialogDiv = document.createElement('div')
     dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/13.png' style='margin-top:25px;position: relative;margin-left: px;width: 637px;'>" +
-            "<div contenteditable style='display:inline-block;width:40px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-470px;font-size: 40px;margin-top: 51px;'value=''>￥</div>" +
-            "<div contenteditable style='display:inline-block;width:400px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-435px;font-size: 40px;margin-top: 57px;font-family: 微信体;'value=''>1000.00</div>" +
+            "<div contenteditable style='font-family: Andale Sans UI; font-weight: 600;display:inline-block;width:40px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-470px;font-size: 40px;margin-top: 51px;'value=''>￥</div>" +
+            "<div contenteditable style='display:inline-block;width:400px;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-435px;font-size: 40px;margin-top: 57px;font-family: WeChat Sans SS Medium;'value=''>1000.00</div>" +
             "<div contenteditable style='display:inline-block;color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left:-460px;font-size: 35px;margin-top: 97px;'value=''>已过期</div>" +
             "<div contenteditable style='display:inline-block;color:rgb(255,249,232);background-color:transparent;border:none;position: absolute;margin-left: -590px;font-size: 30px;margin-top: 190px;'value=''>微信转账</div></div>"
     // 4. 把头像和对话框添加到单条数据中
@@ -1187,8 +1204,8 @@
     // 3. 创建对话框div
     let dialogDiv = document.createElement('div')
     dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/9.png' style='margin-top:25px;position: relative;margin-left: 343px;width: 637px;'>" +
-            "<div contenteditable style='display:inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-490px;font-size: 40px;margin-top: 51px;'value=''>￥</div>" +
-            "<div contenteditable style='display: inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-455px;font-size: 40px;margin-top: 57px;font-family: 微信体;'value=''>1000.00</div>" +
+            "<div contenteditable style='font-family: Andale Sans UI; font-weight: 600;display:inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-490px;font-size: 40px;margin-top: 51px;'value=''>￥</div>" +
+            "<div contenteditable style='display: inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-455px;font-size: 40px;margin-top: 57px;font-family: WeChat Sans SS Medium;'value=''>1000.00</div>" +
             "<div contenteditable style='display: inline-block;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-480px;font-size: 35px;margin-top: 100px;'value=''>你发起了一笔转账</div>" +
             "<div contenteditable style='display: inline-block;color:rgb(255,227,198);background-color:transparent;border:none;position: absolute;margin-left: -600px;font-size: 30px;margin-top: 185px;'value=''>微信转账</div></div>"
     // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
@@ -1215,8 +1232,8 @@
     // 3. 创建对话框div
     let dialogDiv = document.createElement('div')
     dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/19.png' style='margin-top:25px;position: relative;margin-left: 343px;'>" +
-            "<div contenteditable style='display:inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-490px;font-size: 40px;margin-top: 51px;'value=''>￥</div>" +
-            "<div contenteditable style='display: inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-455px;font-size: 40px;margin-top: 57px;font-family: 微信体;'value=''>1000.00</div>" +
+            "<div contenteditable style='font-family: Andale Sans UI; font-weight: 600;display:inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-490px;font-size: 40px;margin-top: 51px;'value=''>￥</div>" +
+            "<div contenteditable style='display: inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-455px;font-size: 40px;margin-top: 57px;font-family: WeChat Sans SS Medium;'value=''>1000.00</div>" +
             "<div contenteditable style='display: inline-block;color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-485px;font-size: 40px;margin-top: 95px;'value='已退还'>已退还</div>" +
             "<div contenteditable style='display: inline-block;color:rgb(255,249,243);background-color:transparent;border:none;position: absolute;margin-left: -600px;font-size: 30px;margin-top: 185px;'value='微信转账'>微信转账</div></div>"
     // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
@@ -1243,8 +1260,8 @@
     // 3. 创建对话框div
     let dialogDiv = document.createElement('div')
     dialogDiv.innerHTML = "<div style='ma'><img src='tutu/wx-sc/18.png' style='margin-top:25px;position: relative;margin-left: 343px;width: 637px;'>" +
-            "<div contenteditable style='display:inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-490px;font-size: 40px;margin-top: 51px;'value=''>￥</div>" +
-            "<div contenteditable style='display: inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-455px;font-size: 40px;margin-top: 57px;font-family: 微信体;'value=''>1000.00</div>" +
+            "<div contenteditable style='font-family: Andale Sans UI; font-weight: 600;display:inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-490px;font-size: 40px;margin-top: 51px;'value=''>￥</div>" +
+            "<div contenteditable style='display: inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-455px;font-size: 40px;margin-top: 57px;font-family: WeChat Sans SS Medium;'value=''>1000.00</div>" +
             "<div contenteditable style='display: inline-block; color:rgb(255,255,255);background-color:transparent;border:none;position: absolute;margin-left:-480px;font-size: 35px;margin-top: 100px;'value=''>已收款</div>" +
             "<div contenteditable style='display: inline-block; color:rgb(255,249,249);background-color:transparent;border:none;position: absolute;margin-left: -600px;font-size: 30px;margin-top: 185px;'value=''>微信转账</div></div>"
     // 4. 把头像和对话框添加到单条数据中 ( 这个要和他人的顺序相反 )
